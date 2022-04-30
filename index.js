@@ -2,6 +2,7 @@ const mode = process.env.MODE;
 if(mode === "dev"){
     console.log(mode)
 }
+if (process.argv[2]) {
 const getResult = (a,b,c)=>{
     console.log(`${a}x + ${(b<0)? `(${b})`: b}x + ${(c<0)? `(${c})`: c} = 0`);
     let x1=0;
@@ -35,6 +36,9 @@ if (args.length>1) {
 } else {
     let [a, b, c] = process.argv.slice(2);
     getResult(a,b,c);
+}
+} else {
+    console.log("Ошибка")
 }
 
 /////// Ввод в формате: 1 1 1 или `(a=1,b=1,c=1)`
